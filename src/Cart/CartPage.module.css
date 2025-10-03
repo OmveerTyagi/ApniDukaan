@@ -1,0 +1,133 @@
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.clearBtn {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clearBtn:hover {
+  background: #ff4c4c;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cartSummary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9f9f9;
+  max-width: 400px;
+}
+
+.billRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.grandTotal {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.free {
+  color: green;
+  font-weight: bold;
+}
+
+.checkoutBtn {
+  margin-top: 1rem;
+  padding: 12px 20px;
+  background: #36d7b7;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.checkoutBtn:hover {
+  background: #2bb198;
+}
+
+/* Empty Cart Styling */
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.emptyCard {
+  text-align: center;
+  padding: 40px 30px;
+  background: #f2f2f2;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.shopBtn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #36d7b7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.shopBtn:hover {
+  background: #2bb198;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cartPage {
+    padding: 15px;
+  }
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cartSummary {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .clearBtn, .checkoutBtn, .shopBtn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

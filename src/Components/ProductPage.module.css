@@ -1,0 +1,110 @@
+.page {
+  padding: 20px;
+}
+
+/* Loader Center */
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Left Controls */
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Right Controls (Search) */
+.rightControls {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.searchBox {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 220px;
+}
+
+.dropdown {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.clearBtn {
+  padding: 10px 16px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clearBtn:hover {
+  background: #e60000;
+}
+
+/* Product Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.noResults {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .leftControls {
+    justify-content: center;
+  }
+
+  .rightControls {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .searchBox {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown {
+    flex: 1;
+  }
+
+  .clearBtn {
+    width: 100%;
+  }
+}

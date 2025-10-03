@@ -1,0 +1,78 @@
+.checkoutPage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.checkoutPage h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section {
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addressInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 1rem;
+}
+
+.cartItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cartItem:last-child {
+  border-bottom: none;
+}
+
+.confirmBtn {
+  padding: 15px;
+  background: #36d7b7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.confirmBtn:hover {
+  background: #2bb198;
+}
+
+/* Payment method radio buttons */
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkoutPage {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmBtn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

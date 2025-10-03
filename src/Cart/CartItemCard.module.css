@@ -1,0 +1,80 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.cartItem:hover {
+  transform: translateY(-2px);
+}
+
+/* Left: Image */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Middle: Details */
+.details {
+  flex: 2;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #16a34a;
+  margin-bottom: 4px;
+}
+
+.quantity {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Right: Remove Button */
+.actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.removeBtn {
+  padding: 8px 16px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #dc2626;
+}
