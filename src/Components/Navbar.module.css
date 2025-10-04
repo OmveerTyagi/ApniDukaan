@@ -165,12 +165,25 @@
   color: white;
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* optional, for spacing between items */
+}
+
+.cartContainer {
+  position: relative;
+  margin-right: 10px; /* optional spacing from hamburger */
+}
+
+
 /* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  padding: 10px;
 }
 
 .hamburger span {
