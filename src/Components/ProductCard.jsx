@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../Redux/CartSlice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../Redux/CartSlice/cartSlice";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
@@ -9,10 +9,30 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { rating, price, description, title, thumbnail, id } = product;
+ 
+ 
+const exchangeRate = 83.2;
+
+const rupees = price * exchangeRate;
+
+  const cartItems = useSelector((state) => state.cart.items);
+  console.log("cartitems",cartItems);
+
+  // Check if this product is already in the cart
+  const isInCart = cartItems?.some((item) => item.id === id);
+  console.log("isInCart", isInCart);
+  
+  console.log(isInCart);
+  
 
   const handleAddProduct = (product) => {
     dispatch(addToCart(product));
     toast.success("Product added to the cart");
+  };
+
+  const handleRemoveProduct = (id) => {
+    dispatch(removeFromCart(id));
+    toast.success("Product Removed From the cart");
   };
 
   const handleBuyProduct = (product) => {
@@ -41,7 +61,7 @@ const ProductCard = ({ product }) => {
         <p className={styles.description}>{description}</p>
 
         <div className={styles.priceRating}>
-          <span className={styles.price}>${price}</span>
+          <span className={styles.price}>₹{rupees.toFixed(2)}</span>
           <div className={styles.rating}>
             Rating: {rating}
             <svg xmlns="http://www.w3.org/2000/svg" className={styles.star} viewBox="0 0 24 24">
@@ -51,7 +71,9 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className={styles.buttons}>
-          <button className={styles.addToCart} onClick={() => handleAddProduct(product)}>Add to Cart</button>
+          {
+            isInCart ? <button className={styles.addToCart} onClick={() => handleRemoveProduct(product.id)}>Remove From Cart</button> :<button className={styles.addToCart} onClick={() => handleAddProduct(product)}>Add to Cart</button>
+          }
           <button className={styles.buyNow} onClick={() => handleBuyProduct(product)}>Buy Now</button>
         </div>
       </div>

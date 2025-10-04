@@ -13,9 +13,13 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const exchangeRate = 83.2;
+
+const rupees = totalPrice* exchangeRate;
+
   const DELIVERY_CHARGE = totalPrice >= 499 ? 0 : 50;
   const HANDLING_FEE = 30;
-  const grandTotal = totalPrice + DELIVERY_CHARGE + HANDLING_FEE;
+  const grandTotal = rupees + DELIVERY_CHARGE + HANDLING_FEE;
 
   const handleCheckout = () => {
     const user = localStorage.getItem("user");
@@ -71,7 +75,7 @@ const CartPage = () => {
         <h2>Billing Summary</h2>
         <div className={styles.billRow}>
           <span>Subtotal:</span>
-          <span>₹{totalPrice.toFixed(2)}</span>
+          <span>₹{rupees.toFixed(2)}</span>
         </div>
         <div className={styles.billRow}>
           <span>Delivery Charges:</span>

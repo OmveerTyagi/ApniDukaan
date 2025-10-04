@@ -6,6 +6,9 @@ import { toast } from "react-toastify";
 
 const CartItemCard = ({ product }) => {
   const dispatch = useDispatch();
+  const exchangeRate = 83.2;
+
+const rupees = product.price * exchangeRate;
 
   return (
     <div className={styles.cartItem}>
@@ -17,7 +20,7 @@ const CartItemCard = ({ product }) => {
       {/* Middle: Title, Price, Quantity */}
       <div className={styles.details}>
         <h3 className={styles.title}>{product.title}</h3>
-        <p className={styles.price}>${product.price.toFixed(2)}</p>
+        <p className={styles.price}>₹{rupees.toFixed(2)}</p>
         <p className={styles.quantity}>Quantity: {product.quantity}</p>
       </div>
 

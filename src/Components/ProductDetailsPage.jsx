@@ -13,6 +13,9 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const exchangeRate = 83.2;
+
+ 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -57,10 +60,10 @@ const ProductDetails = () => {
             <p className={styles.description}>{product.description}</p>
 
             <div className={styles.priceSection}>
-              <span className={styles.discountedPrice}>${discountedPrice}</span>
+              <span className={styles.discountedPrice}>₹{discountedPrice* exchangeRate.toFixed(2)}</span>
               {product.discountPercentage > 0 && (
                 <>
-                  <span className={styles.originalPrice}>${product.price}</span>
+                  <span className={styles.originalPrice}>₹{product.price* exchangeRate.toFixed(2)}</span>
                   <span className={styles.discount}>-{product.discountPercentage}%</span>
                 </>
               )}
